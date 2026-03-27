@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - Abraham Ada & Esther Kemi</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .faq-section {
+        padding-top: 100px;
+      }
+
+      .faq-item {
+        background: var(--white);
+        margin-bottom: 1.5rem;
+        border-radius: 0;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .faq-item:hover {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .faq-question {
+        padding: 1.5rem 2rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--white);
+        border-left: 4px solid var(--secondary);
+        transition: background-color 0.3s ease;
+      }
+
+      .faq-question:hover {
+        background: var(--light);
+      }
+
+      .faq-question h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        color: var(--primary);
+        flex: 1;
+      }
+
+      .faq-toggle {
+        font-size: 1.5rem;
+        color: var(--secondary);
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.active .faq-toggle {
+        transform: rotate(180deg);
+      }
+
+      .faq-answer {
+        display: none;
+        padding: 1.5rem 2rem;
+        background: var(--light);
+        border-top: 1px solid #e0e0e0;
+        line-height: 1.8;
+        color: var(--text-gray);
+      }
+
+      .faq-item.active .faq-answer {
+        display: block;
+        animation: slideDown 0.3s ease;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          max-height: 0;
+        }
+        to {
+          opacity: 1;
+          max-height: 500px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">A & E</a>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="our-story.html">OUR STORY</a></li>
+          <li><a href="details.html">WEDDING DETAILS</a></li>
+          <li><a href="gallery.html">GALLERY</a></li>
+          <li><a href="gifting.html">GIFTING</a></li>
+          <li><a href="accommodations.html">ACCOMMODATIONS</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- FAQ Section -->
+    <section class="light-bg faq-section">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything You Need to Know</p>
+        
+        <div style="max-width: 900px; margin: 0 auto;">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What time should I arrive at the venue?</h3>
+              <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+              <p>We recommend arriving by 7:30 AM for the Traditional Wedding (8:00 AM start) and by 9:30 AM for the Church Wedding (10:00 AM start). This gives everyone time to settle in and enjoy some refreshments before the ceremonies begin.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What is the dress code?</h3>
+              <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+              <p>Our wedding colours are Emerald, Gold, Mint Green, and White. We kindly request that all guests dress in one or a combination of these colours. This creates a beautiful and cohesive look in our photographs and makes our celebration even more special.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Can I bring a guest or plus-one?</h3>
+              <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+              <p>Please RSVP with the number of guests you'll be bringing. For specific questions about bringing additional guests, kindly contact one of our coordinators listed on the contact page.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Is there a reception or reception dinner?</h3>
+              <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+              <p>Yes! After the ceremonies, we will have a reception with light refreshments, live entertainment, and an exquisite dining experience. All guests are invited to stay and celebrate with us.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Where can I find accommodation near the venue?</h3>
+              <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+              <p>Visit our <a href="accommodations.html" style="color: var(--secondary); text-decoration: underline;">Accommodations page</a> for a list of nearby hotels and lodging options in Ondo City. We've curated options for different budgets and preferences.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How do I RSVP?</h3>
+              <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+              <p>You can RSVP by calling or WhatsApp our coordinators at the numbers listed on the contact page, or by completing the RSVP form on the <a href="details.html" style="color: var(--secondary); text-decoration: underline;">Wedding Details</a> page. Please let us know your attendance status and number of guests.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What are the gift options?</h3>
+              <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+              <p>We have several gifting options available: cash gifts, a curated gift registry, or physical gifts. You can view all details and account information on our <a href="gifting.html" style="color: var(--secondary); text-decoration: underline;">Gifting page</a>.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Can I take photographs during the ceremony?</h3>
+              <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+              <p>While we appreciate your enthusiasm, we kindly ask that you refrain from taking photographs during the ceremonies. We have professional photographers capturing these special moments. However, feel free to take photos during the reception!</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What if I have dietary restrictions?</h3>
+              <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+              <p>Please inform us of any dietary restrictions when you RSVP. Contact our wedding coordinators to let us know about allergies, vegetarian, vegan, or any other dietary requirements so we can make appropriate arrangements.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Will there be transportation from the hotel to the venue?</h3>
+              <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we are arranging shuttle services from major hotels in Ondo City to the venue. More details will be sent to confirmed guests. For specific questions, please contact our coordinators.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Wedding Info</h3>
+          <ul>
+            <li><a href="details.html">Details</a></li>
+            <li><a href="gifting.html">Gifting</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Abraham Ada & Esther Kemi</p>
+          <p>May 23, 2026</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Abraham Ada & Esther Kemi. All rights reserved.</p>
+        <p>Developed by Aderevox Tech Hub</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // FAQ Accordion functionality
+      function initFAQ() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+          const question = item.querySelector('.faq-question');
+          
+          question.addEventListener('click', () => {
+            // Close other items
+            faqItems.forEach(otherItem => {
+              if (otherItem !== item) {
+                otherItem.classList.remove('active');
+              }
+            });
+            
+            // Toggle current item
+            item.classList.toggle('active');
+          });
+        });
+      }
+      
+      // Initialize FAQ when page loads
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFAQ);
+      } else {
+        initFAQ();
+      }
+    </script>
+  </body>
+</html>

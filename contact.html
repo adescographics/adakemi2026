@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Abraham Ada & Esther Kemi</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">A & E</a>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="our-story.html">OUR STORY</a></li>
+          <li><a href="details.html">WEDDING DETAILS</a></li>
+          <li><a href="gallery.html">GALLERY</a></li>
+          <li><a href="gifting.html">GIFTING</a></li>
+          <li><a href="accommodations.html">ACCOMMODATIONS</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">We'd Love to Hear From You</p>
+
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <h3>Mr Ajibade</h3>
+            <p class="contact-title">Wedding Coordinator</p>
+            <a href="tel:+2348064853112" class="contact-phone">+234 806 485 3112</a>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <h3>Mr Akinpelumi</h3>
+            <p class="contact-title">Wedding Coordinator</p>
+            <a href="tel:+2347065890805" class="contact-phone">+234 706 589 0805</a>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <h3>Mr Emmanuel</h3>
+            <p class="contact-title">Wedding Coordinator</p>
+            <a href="tel:+2348136360631" class="contact-phone">+234 813 636 0631</a>
+          </div>
+        </div>
+
+        <div style="margin-top: 4rem;">
+          <h3 style="text-align: center; font-size: 1.8rem; color: var(--primary); margin-bottom: 2rem;">Send Us a Message</h3>
+          <form class="rsvp-form" onsubmit="submitContactForm(event)" novalidate>
+            <div class="form-group">
+              <label for="contact-name">Your Name *</label>
+              <input type="text" id="contact-name" name="name" required minlength="2" placeholder="Enter your full name" />
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Your Email *</label>
+              <input type="email" id="contact-email" name="email" required placeholder="Enter your email address" />
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Subject *</label>
+              <input type="text" id="contact-subject" name="subject" required minlength="5" placeholder="Message subject" />
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message *</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                rows="5"
+                required
+                minlength="10"
+                placeholder="Your message here..."
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-secondary">Send Message</button>
+          </form>
+        </div>
+
+        <div style="margin-top: 3rem; padding: 2rem; background: var(--white); border-radius: 10px; text-align: center; border: 2px solid var(--accent);">
+          <h4 style="color: var(--primary); margin-bottom: 1rem;">Wedding Logistics</h4>
+          <p>
+            <strong>Venue:</strong> Christ Chapel, Adeyemi Federal University,
+            143 Ore-Ondo Road, Ondo City, Ondo State
+          </p>
+          <p style="margin-top: 0.5rem;">
+            <strong>Traditional Wedding:</strong> Saturday, May 23, 2026 @ 8:00 AM
+          </p>
+          <p style="margin-top: 0.5rem;">
+            <strong>Church Wedding:</strong> Saturday, May 23, 2026 @ 10:00 AM
+          </p>
+          <p style="margin-top: 0.5rem;">
+            <strong>Colours of the Day:</strong> Emerald, Gold, Mint Green & White
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+      ✓ Thank you! Your message has been sent successfully.
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Wedding Info</h3>
+          <ul>
+            <li><a href="details.html">Details</a></li>
+            <li><a href="gifting.html">Gifting</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Abraham Ada & Esther Kemi</p>
+          <p>May 23, 2026</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Abraham Ada & Esther Kemi. All rights reserved.</p>
+        <p>Developed by Aderevox Tech Hub</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      function submitContactForm(event) {
+        event.preventDefault();
+        
+        // Get form elements
+        const form = event.target;
+        const name = document.getElementById("contact-name").value.trim();
+        const email = document.getElementById("contact-email").value.trim();
+        const subject = document.getElementById("contact-subject").value.trim();
+        const message = document.getElementById("contact-message").value.trim();
+        
+        // Validation
+        if (!name || name.length < 2) {
+          showErrorMessage("Please enter a valid name (at least 2 characters)");
+          return;
+        }
+        
+        // Email validation using regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email || !emailRegex.test(email)) {
+          showErrorMessage("Please enter a valid email address");
+          return;
+        }
+        
+        if (!subject || subject.length < 5) {
+          showErrorMessage("Subject must be at least 5 characters");
+          return;
+        }
+        
+        if (!message || message.length < 10) {
+          showErrorMessage("Message must be at least 10 characters");
+          return;
+        }
+        
+        // Show success message
+        const successMessage = document.getElementById("successMessage");
+        successMessage.textContent = "✓ Thank you! Your message has been sent successfully.";
+        successMessage.classList.add("show");
+        
+        setTimeout(() => {
+          successMessage.classList.remove("show");
+        }, 3000);
+        
+        form.reset();
+      }
+      
+      function showErrorMessage(message) {
+        const errorDiv = document.createElement("div");
+        errorDiv.style.cssText = "position: fixed; top: 100px; left: 50%; transform: translateX(-50%); background: #dc3545; color: white; padding: 1rem 2rem; border-radius: 4px; z-index: 1000; font-weight: 600;";
+        errorDiv.textContent = message;
+        document.body.appendChild(errorDiv);
+        
+        setTimeout(() => {
+          errorDiv.remove();
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>

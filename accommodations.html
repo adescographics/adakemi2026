@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accommodations - Abraham Ada & Esther Kemi</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .accommodations-section {
+        padding-top: 100px;
+      }
+
+      .hotel-card {
+        background: var(--white);
+        border-radius: 0;
+        overflow: hidden;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hotel-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      }
+
+      .hotel-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        background: var(--light);
+      }
+
+      .hotel-content {
+        padding: 2rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hotel-card h3 {
+        color: var(--primary);
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-size: 1.4rem;
+      }
+
+      .hotel-rating {
+        color: #ffc107;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .hotel-distance {
+        color: var(--secondary);
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .hotel-description {
+        color: var(--text-gray);
+        margin-bottom: 1.5rem;
+        flex: 1;
+        line-height: 1.7;
+      }
+
+      .hotel-features {
+        background: var(--light);
+        padding: 1rem;
+        border-radius: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      .hotel-features h4 {
+        color: var(--primary);
+        margin-top: 0;
+        margin-bottom: 0.8rem;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .hotel-features ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+      }
+
+      .hotel-features li {
+        font-size: 0.85rem;
+        color: var(--text-gray);
+        padding-left: 1.5rem;
+        position: relative;
+      }
+
+      .hotel-features li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--secondary);
+        font-weight: 600;
+      }
+
+      .hotel-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .hotel-price {
+        font-size: 1.3rem;
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      .hotel-contact {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .hotel-contact a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: var(--secondary);
+        color: var(--dark);
+        text-decoration: none;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+      }
+
+      .hotel-contact a:hover {
+        background: var(--primary);
+        color: var(--white);
+        transform: scale(1.1);
+      }
+
+      .accommodation-intro {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto 3rem;
+        line-height: 1.9;
+        font-size: 1.05rem;
+        color: var(--text-gray);
+      }
+
+      .filter-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+      }
+
+      .filter-btn {
+        padding: 0.7rem 1.5rem;
+        border: 2px solid var(--secondary);
+        background: transparent;
+        color: var(--secondary);
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .filter-btn.active {
+        background: var(--secondary);
+        color: var(--dark);
+      }
+
+      .filter-btn:hover {
+        background: var(--secondary);
+        color: var(--dark);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">A & E</a>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="our-story.html">OUR STORY</a></li>
+          <li><a href="details.html">WEDDING DETAILS</a></li>
+          <li><a href="gallery.html">GALLERY</a></li>
+          <li><a href="gifting.html">GIFTING</a></li>
+          <li><a href="accommodations.html">ACCOMMODATIONS</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Accommodations Section -->
+    <section class="light-bg accommodations-section">
+      <div class="container">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 500px; padding: 3rem 2rem; text-align: center;">
+          <div style="max-width: 700px;">
+            <div style="font-size: 5rem; color: var(--secondary); margin-bottom: 2rem;">
+              <i class="fas fa-hourglass-end"></i>
+            </div>
+            <h2 style="font-size: clamp(1.8rem, 6vw, 3rem); color: var(--primary); margin-bottom: 1rem; font-family: 'Cormorant Garamond', serif; font-weight: 600;">
+              No Data To Display Yet
+            </h2>
+            <p style="font-size: clamp(1rem, 3vw, 1.2rem); color: var(--text-gray); line-height: 1.8; margin-bottom: 1.5rem;">
+              We are currently working on curating the best accommodation options for our wedding guests. Hotel recommendations and booking details will be available very soon.
+            </p>
+            <p style="font-size: clamp(0.95rem, 2.5vw, 1.1rem); color: var(--secondary); font-weight: 600; margin-bottom: 2.5rem;">
+              Come back soon!
+            </p>
+            <a href="contact.html" style="display: inline-block; padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem); background: var(--primary); color: var(--white); text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.3s ease; font-size: clamp(0.9rem, 2vw, 1rem);">
+              Contact Us For Hotel Recommendations
+            </a>
+          </div>
+        </div>
+
+        <div class="hotel-grid" style="display: none; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 4rem;">
+          <!-- Luxury Hotel 1 -->
+          <div class="hotel-card" data-category="luxury">
+            <img src="images/hotel-grand-ondo.png" alt="The Grand Ondo Hotel" class="hotel-image" />
+            <div class="hotel-content">
+              <h3>The Grand Ondo Hotel</h3>
+              <div class="hotel-rating">★★★★★ (4.8/5)</div>
+              <div class="hotel-distance"><i class="fas fa-map-marker-alt"></i> 2 km from venue</div>
+              <p class="hotel-description">
+                Experience luxury at its finest. The Grand Ondo offers world-class amenities including fine dining, spa services, and beautiful event spaces.
+              </p>
+              <div class="hotel-features">
+                <h4>Amenities</h4>
+                <ul>
+                  <li>Swimming Pool</li>
+                  <li>Free WiFi</li>
+                  <li>Restaurant & Bar</li>
+                  <li>Gym & Spa</li>
+                  <li>Room Service</li>
+                  <li>Concierge</li>
+                </ul>
+              </div>
+              <div class="hotel-footer">
+                <div class="hotel-price">₦45,000+</div>
+                <div class="hotel-contact">
+                  <a href="tel:+2348123456789" title="Call"><i class="fas fa-phone"></i></a>
+                  <a href="https://www.google.com" target="_blank" title="Website"><i class="fas fa-globe"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Luxury Hotel 2 -->
+          <div class="hotel-card" data-category="luxury">
+            <img src="images/hotel-ondo-palace.png" alt="Ondo Palace Resort" class="hotel-image" />
+            <div class="hotel-content">
+              <h3>Ondo Palace Resort</h3>
+              <div class="hotel-rating">★★★★★ (4.7/5)</div>
+              <div class="hotel-distance"><i class="fas fa-map-marker-alt"></i> 3.5 km from venue</div>
+              <p class="hotel-description">
+                A premium resort offering spacious rooms, traditional Nigerian hospitality, and stunning garden views perfect for a memorable stay.
+              </p>
+              <div class="hotel-features">
+                <h4>Amenities</h4>
+                <ul>
+                  <li>Luxury Suites</li>
+                  <li>Free WiFi</li>
+                  <li>Conference Rooms</li>
+                  <li>Garden Restaurant</li>
+                  <li>Laundry Service</li>
+                  <li>24/7 Security</li>
+                </ul>
+              </div>
+              <div class="hotel-footer">
+                <div class="hotel-price">₦40,000+</div>
+                <div class="hotel-contact">
+                  <a href="tel:+2348123456790" title="Call"><i class="fas fa-phone"></i></a>
+                  <a href="https://www.google.com" target="_blank" title="Website"><i class="fas fa-globe"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mid-Range Hotel 1 -->
+          <div class="hotel-card" data-category="mid-range">
+            <img src="images/hotel-comfort-inn.png" alt="Comfort Inn Ondo" class="hotel-image" />
+            <div class="hotel-content">
+              <h3>Comfort Inn Ondo</h3>
+              <div class="hotel-rating">★★★★ (4.4/5)</div>
+              <div class="hotel-distance"><i class="fas fa-map-marker-alt"></i> 1.8 km from venue</div>
+              <p class="hotel-description">
+                Comfortable and affordable accommodation with friendly staff, clean rooms, and good dining options. Perfect for families and groups.
+              </p>
+              <div class="hotel-features">
+                <h4>Amenities</h4>
+                <ul>
+                  <li>Free WiFi</li>
+                  <li>Restaurant</li>
+                  <li>Room Service</li>
+                  <li>Parking</li>
+                  <li>Meeting Rooms</li>
+                  <li>24-hour Front Desk</li>
+                </ul>
+              </div>
+              <div class="hotel-footer">
+                <div class="hotel-price">₦25,000+</div>
+                <div class="hotel-contact">
+                  <a href="tel:+2348123456791" title="Call"><i class="fas fa-phone"></i></a>
+                  <a href="https://www.google.com" target="_blank" title="Website"><i class="fas fa-globe"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mid-Range Hotel 2 -->
+          <div class="hotel-card" data-category="mid-range">
+            <img src="images/hotel-executive-plaza.png" alt="Executive Plaza Hotel" class="hotel-image" />
+            <div class="hotel-content">
+              <h3>Executive Plaza Hotel</h3>
+              <div class="hotel-rating">★★★★ (4.3/5)</div>
+              <div class="hotel-distance"><i class="fas fa-map-marker-alt"></i> 2.2 km from venue</div>
+              <p class="hotel-description">
+                Well-appointed rooms with modern decor and convenient facilities. Great location with easy access to shopping and entertainment areas.
+              </p>
+              <div class="hotel-features">
+                <h4>Amenities</h4>
+                <ul>
+                  <li>WiFi</li>
+                  <li>Air Conditioning</li>
+                  <li>TV & Cable</li>
+                  <li>Restaurant</li>
+                  <li>Safe Parking</li>
+                  <li>Room Cleaning</li>
+                </ul>
+              </div>
+              <div class="hotel-footer">
+                <div class="hotel-price">₦22,000+</div>
+                <div class="hotel-contact">
+                  <a href="tel:+2348123456792" title="Call"><i class="fas fa-phone"></i></a>
+                  <a href="https://www.google.com" target="_blank" title="Website"><i class="fas fa-globe"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Budget Hotel 1 -->
+          <div class="hotel-card" data-category="budget">
+            <img src="images/hotel-budget-rest.png" alt="Budget Rest Inn" class="hotel-image" />
+            <div class="hotel-content">
+              <h3>Budget Rest Inn</h3>
+              <div class="hotel-rating">★★★ (3.9/5)</div>
+              <div class="hotel-distance"><i class="fas fa-map-marker-alt"></i> 1.5 km from venue</div>
+              <p class="hotel-description">
+                Simple, clean rooms at affordable prices. No-frills accommodation ideal for budget-conscious guests who want to be close to the venue.
+              </p>
+              <div class="hotel-features">
+                <h4>Amenities</h4>
+                <ul>
+                  <li>WiFi Available</li>
+                  <li>Air Conditioning</li>
+                  <li>Basic TV</li>
+                  <li>24-hour Front Desk</li>
+                  <li>Parking Available</li>
+                  <li>Hot Water</li>
+                </ul>
+              </div>
+              <div class="hotel-footer">
+                <div class="hotel-price">₦15,000+</div>
+                <div class="hotel-contact">
+                  <a href="tel:+2348123456793" title="Call"><i class="fas fa-phone"></i></a>
+                  <a href="https://www.google.com" target="_blank" title="Website"><i class="fas fa-globe"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Budget Hotel 2 -->
+          <div class="hotel-card" data-category="budget">
+            <img src="images/hotel-palm-view.png" alt="Palm View Guesthouse" class="hotel-image" />
+            <div class="hotel-content">
+              <h3>Palm View Guesthouse</h3>
+              <div class="hotel-rating">★★★ (3.8/5)</div>
+              <div class="hotel-distance"><i class="fas fa-map-marker-alt"></i> 2.5 km from venue</div>
+              <p class="hotel-description">
+                Cozy guesthouse with local charm. Friendly staff and home-like atmosphere make it a great choice for visitors seeking an authentic Nigerian experience.
+              </p>
+              <div class="hotel-features">
+                <h4>Amenities</h4>
+                <ul>
+                  <li>WiFi</li>
+                  <li>Fans & A/C</li>
+                  <li>Breakfast Available</li>
+                  <li>Laundry Service</li>
+                  <li>Parking</li>
+                  <li>Friendly Staff</li>
+                </ul>
+              </div>
+              <div class="hotel-footer">
+                <div class="hotel-price">₦13,000+</div>
+                <div class="hotel-contact">
+                  <a href="tel:+2348123456794" title="Call"><i class="fas fa-phone"></i></a>
+                  <a href="https://www.google.com" target="_blank" title="Website"><i class="fas fa-globe"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div style="background: var(--white); padding: 2.5rem; margin-bottom: 3rem; border-left: 4px solid var(--secondary);">
+          <h3 style="color: var(--primary); margin-top: 0; margin-bottom: 1.5rem;">Travel Tips</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+            <div>
+              <h4 style="color: var(--secondary); margin-bottom: 0.8rem;">Getting to Ondo City</h4>
+              <p style="margin: 0; color: var(--text-gray); line-height: 1.7;">
+                Ondo City is accessible by road from major cities. The nearest airport is Akure Airport (AKF), about 45 minutes away. We recommend booking accommodation in advance, especially during the wedding weekend.
+              </p>
+            </div>
+            <div>
+              <h4 style="color: var(--secondary); margin-bottom: 0.8rem;">Transportation</h4>
+              <p style="margin: 0; color: var(--text-gray); line-height: 1.7;">
+                We are arranging shuttle services from major hotels to the venue. Local taxis and ride-sharing apps are available. We'll provide detailed transportation information to all confirmed guests.
+              </p>
+            </div>
+            <div>
+              <h4 style="color: var(--secondary); margin-bottom: 0.8rem;">Booking</h4>
+              <p style="margin: 0; color: var(--text-gray); line-height: 1.7;">
+                We recommend booking your accommodation as soon as possible. Contact the hotels directly or through online booking platforms. Group rates may be available - ask about wedding guest discounts.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Wedding Info</h3>
+          <ul>
+            <li><a href="details.html">Details</a></li>
+            <li><a href="gifting.html">Gifting</a></li>
+            <li><a href="accommodations.html">Accommodations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Abraham Ada & Esther Kemi</p>
+          <p>May 23, 2026</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Abraham Ada & Esther Kemi. All rights reserved.</p>
+        <p>Developed by Aderevox Tech Hub</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Filter functionality for hotels
+      function initHotelFilter() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const hotelCards = document.querySelectorAll('.hotel-card');
+
+        filterButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Filter hotels
+            const filter = button.getAttribute('data-filter');
+            hotelCards.forEach(card => {
+              if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                card.style.display = 'flex';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+          });
+        });
+      }
+
+      // Initialize on page load
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initHotelFilter);
+      } else {
+        initHotelFilter();
+      }
+    </script>
+  </body>
+</html>

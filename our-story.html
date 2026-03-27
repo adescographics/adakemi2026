@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Story - Abraham Ada & Esther Kemi</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">A & E</a>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="our-story.html">OUR STORY</a></li>
+          <li><a href="details.html">WEDDING DETAILS</a></li>
+          <li><a href="gallery.html">GALLERY</a></li>
+          <li><a href="gifting.html">GIFTING</a></li>
+          <li><a href="accommodations.html">ACCOMMODATIONS</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Our Love Story Section -->
+    <section class="white-bg story-section">
+      <div class="container">
+        <h2 class="section-title">Our Love Story</h2>
+        <p class="section-subtitle">Adakemi</p>
+        
+        <div class="story-wrapper">
+          <div class="story-image-container">
+            <img src="images/our-love-story.png" alt="Our Love Story" class="story-image" />
+          </div>
+
+          <div class="story-text-container">
+            <h3 class="story-heading">A Journey Written by God</h3>
+            
+            <p class="story-paragraph">
+              Every beautiful love story begins with a divine plan, and ours is no different. Long before we met, God was already writing a story that would bring our hearts together at the right time and in the right way.
+            </p>
+
+            <p class="story-paragraph">
+              Our love story has taught us that God's plan overrules every other plan, and that only His will prevails in the lives of His children. This journey strengthened our belief in His word that says His thoughts for us are of good and not of evil, to give us a future and a hope.
+            </p>
+
+            <p class="story-paragraph">
+              Our journey began when God allowed our paths to cross. What started as a simple meeting gradually grew into a meaningful friendship. Through conversations, shared experiences, and moments of laughter, we began to discover how much we had in common—especially our love for God and our desire to live lives that honor Him.
+            </p>
+
+            <button onclick="toggleFullStory()" class="btn" id="read-more-btn" aria-expanded="false" aria-controls="full-story">Read Our Full Story</button>
+
+            <div id="full-story" class="full-story-content">
+              <p class="story-paragraph">
+                As time passed, our friendship deepened. We supported each other through challenges, encouraged one another in faith, and grew spiritually together. In those moments, we realized that what we had was more than friendship; it was something precious that God Himself was nurturing.
+              </p>
+
+              <p class="story-paragraph">
+                With prayer, patience, and guidance from God, our relationship blossomed into love. We learned to trust God with our journey, knowing that His plans are always perfect. Through every step, we saw His hand leading us, teaching us the meaning of patience, commitment, forgiveness, and unconditional love.
+              </p>
+
+              <p class="story-paragraph">
+                Surrounded by joy and gratitude, we embraced the future that God had prepared for us. Saying "yes" was not just a promise to each other, but a commitment to build a marriage centered on Christ.
+              </p>
+
+              <p class="story-paragraph">
+                Today, as we prepare to begin this new chapter of our lives, we are grateful for the love that God has given us and for the family and friends who have supported us along the way. Our prayer is that our marriage will always reflect God's love, grace, and faithfulness.
+              </p>
+
+              <blockquote class="story-quote">
+                "Therefore what God has joined together, let no one separate." — Mark 10:9
+              </blockquote>
+
+              <p class="story-paragraph">
+                Our story is a testimony of God's perfect timing, His unfailing love, and the beautiful journey that begins when two hearts choose to follow Him together. And this is only the beginning of the wonderful story God is still writing for us.
+              </p>
+
+              <button onclick="toggleFullStory()" class="btn" id="read-less-btn" style="display: none;" aria-expanded="true" aria-controls="full-story">Read Less</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Wedding Info</h3>
+          <ul>
+            <li><a href="details.html">Details</a></li>
+            <li><a href="gifting.html">Gifting</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Abraham Ada & Esther Kemi</p>
+          <p>May 23, 2026</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Abraham Ada & Esther Kemi. All rights reserved.</p>
+        <p>Developed by Aderevox Tech Hub</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      function toggleFullStory() {
+        const fullStory = document.getElementById('full-story');
+        const readMoreBtn = document.getElementById('read-more-btn');
+        const readLessBtn = document.getElementById('read-less-btn');
+        
+        fullStory.classList.toggle('show');
+        
+        if (fullStory.classList.contains('show')) {
+          readMoreBtn.style.display = 'none';
+          readMoreBtn.setAttribute('aria-expanded', 'false');
+          readLessBtn.style.display = 'inline-block';
+          readLessBtn.setAttribute('aria-expanded', 'true');
+          fullStory.setAttribute('aria-hidden', 'false');
+        } else {
+          readMoreBtn.style.display = 'inline-block';
+          readMoreBtn.setAttribute('aria-expanded', 'false');
+          readLessBtn.style.display = 'none';
+          readLessBtn.setAttribute('aria-expanded', 'true');
+          fullStory.setAttribute('aria-hidden', 'true');
+        }
+      }
+    </script>
+  </body>
+</html>
