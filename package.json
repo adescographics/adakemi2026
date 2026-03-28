@@ -4,11 +4,7 @@
   "description": "Wedding website for Abraham Ada & Esther Kemi",
   "private": true,
   "scripts": {
-    "dev": "cd public && python3 -m http.server 3000",
-    "start": "cd public && python3 -m http.server 8000"
-  },
-  "dependencies": {
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "dev": "cd public && py -m http.server 3000",
+    "start": "cd public && py -m http.server 8000"
   }
 }
