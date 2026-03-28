@@ -98,4 +98,4 @@ This runs on `http://localhost:8000`
 
 ## Support
 
-For questions or issues, send a main at adescographics2023@gmail.com.
+For questions or issues, send a mail to adescographics2023@gmail.com.
