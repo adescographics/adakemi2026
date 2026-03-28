@@ -1,12 +1,12 @@
 # Wedding Website - Abraham Ada & Esther Kemi
 
-A beautiful vanilla HTML/CSS/JavaScript wedding website.
+A beautiful and simple vanilla HTML/CSS/JavaScript wedding website made for Abraham and Kemi (Adakemi2026).
 
 ## Project Structure
 
 ```
 wedding-website/
-├── public/                 # All website files (HTML, CSS, JS, images)
+├──                  # All website files (HTML, CSS, JS, images)
 │   ├── index.html         # Home page
 │   ├── our-story.html     # Couple's story
 │   ├── details.html       # Wedding details
@@ -49,11 +49,11 @@ wedding-website/
 
 ## Making Changes
 
-All editable files are in the `/public` folder:
+All editable files are in the root directory:
 - **HTML files**: Edit page content and structure
 - **styles.css**: Edit website styling
 - **script.js**: Edit JavaScript functionality
-- **images/**: Add or replace images
+- **images/**: Add or replace images (JPG, PNG etc)
 
 Changes take effect when you refresh the browser (no rebuild needed).
 
@@ -94,7 +94,8 @@ This runs on `http://localhost:8000`
 - No build tools required for development
 - All styling is in a single CSS file for simplicity
 - JavaScript uses vanilla DOM manipulation
+- You would need Python 3.6+ to run locally because it runs on the server.
 
 ## Support
 
-For questions or issues, please contact the website owner through the contact form.
+For questions or issues, send a main at adescographics2023@gmail.com.
