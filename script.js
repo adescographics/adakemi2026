@@ -16,9 +16,10 @@ function initNavigation() {
 function toggleMenu() {
   const navLinks = document.getElementById("navLinks");
   const hamburger = document.querySelector(".hamburger");
-  const isActive = navLinks.classList.toggle("active");
   
-  if (hamburger) {
+  if (navLinks && hamburger) {
+    const isActive = navLinks.classList.toggle("active");
+    hamburger.classList.toggle("active", isActive);
     hamburger.setAttribute("aria-expanded", isActive ? "true" : "false");
   }
 }
@@ -26,12 +27,27 @@ function toggleMenu() {
 function closeMenu() {
   const navLinks = document.getElementById("navLinks");
   const hamburger = document.querySelector(".hamburger");
-  navLinks.classList.remove("active");
   
-  if (hamburger) {
+  if (navLinks && hamburger) {
+    navLinks.classList.remove("active");
+    hamburger.classList.remove("active");
     hamburger.setAttribute("aria-expanded", "false");
   }
 }
+
+// Close menu when clicking outside
+document.addEventListener("click", (event) => {
+  const nav = document.getElementById("navbar");
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.getElementById("navLinks");
+  
+  if (nav && !nav.contains(event.target)) {
+    if (navLinks && navLinks.classList.contains("active")) {
+      navLinks.classList.remove("active");
+      if (hamburger) hamburger.classList.remove("active");
+    }
+  }
+});
 
 // Scroll effect on navbar
 window.addEventListener("scroll", () => {
